@@ -1,34 +1,43 @@
 # Diagnosis and Treatment of Cucumber Diseases
 
-C# implementation of the Cucumber Diseases
+Java implementation of the Cucumber Diseases workshop
 
-## Setup 
-
-There are different setup options
-
-### gitpod.io
-
-TODO: **UNDER CONSTRUCTION: don't use the link, it's not configured completely**
-
-
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/Nagarro-Technical-Coaching-Workshops/gherkin-diseases)
-
-1. [Login to GitHub](https://github.com/login) or [create an account](https://github.com/join).
-
-2. [Create a new workspace at Gitpod](https://gitpod.io/new/#https://github.com/Nagarro-Technical-Coaching-Workshops/cucumber-diseases).
-   This usually takes a little while, just be patient.
-
-3. Open  from the file tree on the left and wait for the Java installation to finish.
-
-   A box will appear on the bottom right, saying _Opening Java Projects_, you can click on _check details_ to follow the installation progress.
-
-4. After the installation is done, you can right-click into the code, and select _Run test at Cursor_ (to run a single test) or _Run Tests in Current File_ (to run all tests).
-
+## Installation
+For the workshop Java 17 or later is a pre-requisite for building und runnnig the Cucumber features. It needs to be installed before the local setup.
 
 ### Local
 
-* clone the repository localy
-* open the solution favourite IDE
-* install a reqnroll extension or plugin in you IDE
-* Visual Studio 2022: frist, deinstall the your SpecFlow extension, then install the reqnroll extension (https://docs.reqnroll.net/latest/installation/setup-ide.html)
-* Visual Studio Code: it recommended to use the Cucumber extension (https://docs.reqnroll.net/latest/installation/setup-ide.html, https://marketplace.visualstudio.com/items?itemName=CucumberOpen.cucumber-official)
+* Clone the repository localy
+* Import the repository in your favourite IDE and configure the Maven build
+* Install a Cucumber extension or plugin in you IDE
+   * IntelliJ IDEA: https://www.jetbrains.com/help/idea/cucumber-support.html
+   * VS Code: https://marketplace.visualstudio.com/items?itemName=CucumberOpen.cucumber-official
+   * Eclipse: https://marketplace.eclipse.org/content/cucumber-eclipse-plugin
+
+### Platform notes
+The VC Code Cucumber extension fails on any Unix distribution. It's recommended to use VS Code on Windows.
+
+Restrictions of missing Cucumber extension on Unix:
+* You won't have Gherkin support
+* You can't generate step definition
+* There is NO linkage between your feature files and step definition implementation
+* You are still able to edit all file and execute your Unit Tests.
+
+### gitpod.io
+Since gitpod.io uses Linux, the same restrictions as on any other Unix distribution apply.
+
+<a href="https://gitpod.io/#https://github.com/rolger/cucumber-diseases-java" target="_blank"> 
+<img src="https://gitpod.io/button/open-in-gitpod.svg" alt="Open in Gitpod">
+</a>
+
+1. [Login to GitHub](https://github.com/login) or [create an account](https://github.com/join).
+
+2. [Create a new workspace at Gitpod](https://gitpod.io/new/#https://github.com/rolger/cucumber-diseases-java).
+   This usually takes a little while, just be patient.
+
+3. At the bottom there is a Terminal window executing the Maven build the of project. Wait until _BUILD SUCCESS_ apprears in the log.
+  
+5. Open  from the file tree on the left and wait for the Java installation to finish.
+
+6. After the installation is done, you can open files via the Java Project explorer, edit the code, and select _Run Tests_ on either the test folder or the _RunAllCucumberTests_ class file.
+

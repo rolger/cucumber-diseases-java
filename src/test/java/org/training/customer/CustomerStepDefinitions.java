@@ -1,18 +1,17 @@
-package org.training;
-
-import io.cucumber.datatable.DataTable;
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
-import org.assertj.core.api.Assertions;
+package org.training.customer;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Map;
 
-public class CustomerStepDefintions {
+import org.assertj.core.api.Assertions;
+import io.cucumber.datatable.DataTable;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class CustomerStepDefinitions {
 
     private static final LocalDate DEFAULT_BIRTHDAY = LocalDate.of(1995, 1, 1);
 
@@ -25,7 +24,7 @@ public class CustomerStepDefintions {
     private Exception error;
     private int count;
 
-    public CustomerStepDefintions(CustomerService customerService) {
+    public CustomerStepDefinitions(CustomerService customerService) {
         this.customerService = customerService;
     }
 
@@ -34,12 +33,12 @@ public class CustomerStepDefintions {
         this.firstName = firstName;
     }
 
-    @And("the customer last name is {string}")
+    @Given("the customer last name is {string}")
     public void theCustomerLastNameIs(String lastName) {
         this.lastName = lastName;
     }
 
-    @And("the customer's birthday is {}")
+    @Given("the customer's birthday is {}")
     public void theCustomersBirthdayIs(String date) {
         this.birthday = LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyy/MM/dd"));
     }
@@ -56,10 +55,13 @@ public class CustomerStepDefintions {
         this.secondLastName = lastName;
     }
 
-
     @When("the customer is created")
     public void theCustomerIsCreated() {
-        customerService.addCustomer(firstName, lastName, DEFAULT_BIRTHDAY);
+        try {
+            customerService.addCustomer(firstName, lastName, DEFAULT_BIRTHDAY);
+        } catch (IllegalArgumentException e) {
+            error = e;
+        }
     }
 
     @When("an invalid customer is created")
@@ -89,7 +91,6 @@ public class CustomerStepDefintions {
     public void theSecondCustomerCreationShouldFail() {
     }
 
-
     @Given("there are no customers")
     public void thereAreNoCustomers() {
     }
@@ -97,7 +98,6 @@ public class CustomerStepDefintions {
     @Given("no customers exist")
     public void noCustomersExist() {
     }
-
 
     @Given("there is a customer")
     public void thereIsACustomer(DataTable customerTable) {
@@ -122,6 +122,11 @@ public class CustomerStepDefintions {
 
     @When("the customer Sabine Mustermann is searched")
     public void theCustomerSabineMustermannIsSearched() {
+        count = customerService.searchCustomers("Sabine", "Mustermann").size();
+    }
+
+    @When("the customer Rose Smith is searched")
+    public void theCustomerRoseSmithIsSearched() {
     }
 
     @Then("the customer can be found")
@@ -140,9 +145,10 @@ public class CustomerStepDefintions {
 
     @Then("the customer Sabine Mustermann can be found")
     public void theCustomerSabineMustermannCanBeFound() {
-        var customer = customerService.searchCustomers("Sabine", "Mustermann");
+        var customer = customerService.searchCustomer("Sabine", "Mustermann");
 
-        Assertions.assertThat(customer).isNotNull();
+        Assertions.assertThat(customer.firstName).isEqualTo("Sabine");
+        Assertions.assertThat(customer.lastName).isEqualTo("Mustermann");
     }
 
     @Then("the second customer can be found")
