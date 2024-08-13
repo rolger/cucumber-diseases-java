@@ -9,7 +9,7 @@ Java implementation of the Cucumber Diseases
 TODO: **UNDER CONSTRUCTION: don't use the link, it's not configured completely**
 
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/Nagarro-Technical-Coaching-Workshops/gherkin-diseases)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/Nagarro-Technical-Coaching-Workshops/gherkin-diseases-java)
 
 1. [Login to GitHub](https://github.com/login) or [create an account](https://github.com/join).
 
