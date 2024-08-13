@@ -1,10 +1,8 @@
 # Diagnosis and Treatment of Cucumber Diseases
 
-C# implementation of the Cucumber Diseases
+Java implementation of the Cucumber Diseases
 
-## Setup 
-
-There are different setup options
+## Setup
 
 ### gitpod.io
 
@@ -24,11 +22,10 @@ TODO: **UNDER CONSTRUCTION: don't use the link, it's not configured completely**
 
 4. After the installation is done, you can right-click into the code, and select _Run test at Cursor_ (to run a single test) or _Run Tests in Current File_ (to run all tests).
 
-
 ### Local
 
 * clone the repository localy
-* open the solution favourite IDE
-* install a reqnroll extension or plugin in you IDE
-* Visual Studio 2022: frist, deinstall the your SpecFlow extension, then install the reqnroll extension (https://docs.reqnroll.net/latest/installation/setup-ide.html)
-* Visual Studio Code: it recommended to use the Cucumber extension (https://docs.reqnroll.net/latest/installation/setup-ide.html, https://marketplace.visualstudio.com/items?itemName=CucumberOpen.cucumber-official)
+* import it in your favourite IDE and configure the Maven build
+* install a Cucumber extension or plugin in you IDE
+* IntelliJ IDEA: https://www.jetbrains.com/help/idea/cucumber-support.html
+* VS Code: https://marketplace.visualstudio.com/items?itemName=CucumberOpen.cucumber-official
