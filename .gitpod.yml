@@ -11,4 +11,5 @@ vscode:
 jetbrains:
     intellij:
         plugins:
+            - gherkin
             - cucumber-java
