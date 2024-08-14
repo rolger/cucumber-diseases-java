@@ -6,9 +6,9 @@ Java implementation of the Cucumber Diseases
 
 ### gitpod.io
 
-TODO: **UNDER CONSTRUCTION: don't use the link, it's not configured completely**
-
-<a href="https://gitpod.io/#https://github.com/rolger/cucumber-diseases-java" target="_blank" img src="https://gitpod.io/button/open-in-gitpod.svg" alt="Open in Gitpod"></a>
+<a href="https://gitpod.io/#https://github.com/rolger/cucumber-diseases-java" target="_blank"> 
+<img src="https://gitpod.io/button/open-in-gitpod.svg" alt="Open in Gitpod">
+</a>
 
 
 
