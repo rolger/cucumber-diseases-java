@@ -16,19 +16,18 @@ For the workshop Java 17 or later is a pre-requisite for building und runnnig th
 ### Platform notes
 The VC Code Cucumber extension fails on any Unix distribution. It's recommended to use VS Code on Windows.
 
-Without the Cucumber extension there are some restrictions:
+Restrictions of missing Cucumber extension on Unix:
 * You won't have Gherkin support
 * You can't generate step definition
 * There is NO linkage between your feature files and step definintion implementation
 * You are still able to edit all file and execute your Unit Tests.
 
 ### gitpod.io
-Since the VC Code Cucumber plugin fails on any Unix distribution, it's not recommeneded to use gitpod.io. 
+Since gitpod.io uses Linux, the same restrictions as on any other Unix distribution apply.
 
 <a href="https://gitpod.io/#https://github.com/rolger/cucumber-diseases-java" target="_blank"> 
 <img src="https://gitpod.io/button/open-in-gitpod.svg" alt="Open in Gitpod">
 </a>
-
 
 
 1. [Login to GitHub](https://github.com/login) or [create an account](https://github.com/join).
@@ -38,8 +37,8 @@ Since the VC Code Cucumber plugin fails on any Unix distribution, it's not recom
 
 3. Open  from the file tree on the left and wait for the Java installation to finish.
 
-   A box will appear on the bottom right, saying _Opening Java Projects_, you can click on _check details_ to follow the installation progress.
+   At the bottom there is a Terminal window executing the Maven build the of project. Wait until _BUILD SUCCESS_ apprears in the log.
 
-4. After the installation is done, you can right-click into the code, and select _Run test at Cursor_ (to run a single test) or _Run Tests in Current File_ (to run all tests).
+4. After the installation is done, you can open files via the Java Project explorer, edit the code, and select _Run Tests_ on either the test folder or the _RunAllCucumberTests_ class file.
 
 
