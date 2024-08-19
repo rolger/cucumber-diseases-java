@@ -4,6 +4,20 @@ Java implementation of the Cucumber Diseases
 
 ## Setup
 
+### Local
+
+Prerequisites:
+* Java 17 or greater
+* Maven
+
+Steps
+* Clone the repository localy
+* Import the repository in your favourite IDE and configure the Maven build
+* Install a Cucumber extension or plugin in you IDE
+   * IntelliJ IDEA: https://www.jetbrains.com/help/idea/cucumber-support.html
+   * VS Code: https://marketplace.visualstudio.com/items?itemName=CucumberOpen.cucumber-official
+
+
 ### gitpod.io
 
 <a href="https://gitpod.io/#https://github.com/rolger/cucumber-diseases-java" target="_blank"> 
@@ -23,10 +37,4 @@ Java implementation of the Cucumber Diseases
 
 4. After the installation is done, you can right-click into the code, and select _Run test at Cursor_ (to run a single test) or _Run Tests in Current File_ (to run all tests).
 
-### Local
 
-* clone the repository localy
-* import it in your favourite IDE and configure the Maven build
-* install a Cucumber extension or plugin in you IDE
-* IntelliJ IDEA: https://www.jetbrains.com/help/idea/cucumber-support.html
-* VS Code: https://marketplace.visualstudio.com/items?itemName=CucumberOpen.cucumber-official
