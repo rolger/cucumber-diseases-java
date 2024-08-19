@@ -12,9 +12,6 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Map;
 
-import static net.bytebuddy.matcher.ElementMatchers.returns;
-import static org.assertj.core.api.Assertions.from;
-
 public class CustomerStepDefintions {
 
     private static final LocalDate DEFAULT_BIRTHDAY = LocalDate.of(1995, 1, 1);
