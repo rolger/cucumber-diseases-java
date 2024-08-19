@@ -1,18 +1,19 @@
 package org.training;
 
-import io.cucumber.datatable.DataTable;
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
-import org.assertj.core.api.Assertions;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Map;
 
-public class CustomerStepDefintions {
+import org.assertj.core.api.Assertions;
+
+import io.cucumber.datatable.DataTable;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class CustomerStepDefinitions {
 
     private static final LocalDate DEFAULT_BIRTHDAY = LocalDate.of(1995, 1, 1);
 
@@ -25,7 +26,7 @@ public class CustomerStepDefintions {
     private Exception error;
     private int count;
 
-    public CustomerStepDefintions(CustomerService customerService) {
+    public CustomerStepDefinitions(CustomerService customerService) {
         this.customerService = customerService;
     }
 
@@ -55,7 +56,6 @@ public class CustomerStepDefintions {
         this.secondFirstName = firstName;
         this.secondLastName = lastName;
     }
-
 
     @When("the customer is created")
     public void theCustomerIsCreated() {
@@ -89,7 +89,6 @@ public class CustomerStepDefintions {
     public void theSecondCustomerCreationShouldFail() {
     }
 
-
     @Given("there are no customers")
     public void thereAreNoCustomers() {
     }
@@ -97,7 +96,6 @@ public class CustomerStepDefintions {
     @Given("no customers exist")
     public void noCustomersExist() {
     }
-
 
     @Given("there is a customer")
     public void thereIsACustomer(DataTable customerTable) {
