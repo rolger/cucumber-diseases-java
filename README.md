@@ -1,24 +1,29 @@
 # Diagnosis and Treatment of Cucumber Diseases
 
-Java implementation of the Cucumber Diseases
+Java implementation of the Cucumber Diseases workshop
 
-## Setup
+## Installation
+For the workshop Java 17 or later is a pre-requisite for building und runnnig the Cucumber features. It needs to be installed before the installation can begin.
 
 ### Local
 
-Prerequisites:
-* Java 17 or greater
-* Maven
-
-Steps
 * Clone the repository localy
 * Import the repository in your favourite IDE and configure the Maven build
 * Install a Cucumber extension or plugin in you IDE
    * IntelliJ IDEA: https://www.jetbrains.com/help/idea/cucumber-support.html
    * VS Code: https://marketplace.visualstudio.com/items?itemName=CucumberOpen.cucumber-official
 
+### Platform notes
+The VC Code Cucumber extension fails on any Unix distribution. It's recommended to use VS Code on Windows.
+
+Without the Cucumber extension there are some restrictions:
+* You won't have Gherkin support
+* You can't generate step definition
+* There is NO linkage between your feature files and step definintion implementation
+* You are still able to edit all file and execute your Unit Tests.
 
 ### gitpod.io
+Since the VC Code Cucumber plugin fails on any Unix distribution, it's not recommeneded to use gitpod.io. 
 
 <a href="https://gitpod.io/#https://github.com/rolger/cucumber-diseases-java" target="_blank"> 
 <img src="https://gitpod.io/button/open-in-gitpod.svg" alt="Open in Gitpod">
