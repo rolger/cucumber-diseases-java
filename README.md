@@ -12,6 +12,7 @@ For the workshop Java 17 or later is a pre-requisite for building und runnnig th
 * Install a Cucumber extension or plugin in you IDE
    * IntelliJ IDEA: https://www.jetbrains.com/help/idea/cucumber-support.html
    * VS Code: https://marketplace.visualstudio.com/items?itemName=CucumberOpen.cucumber-official
+   * Eclipse: https://marketplace.eclipse.org/content/cucumber-eclipse-plugin
 
 ### Platform notes
 The VC Code Cucumber extension fails on any Unix distribution. It's recommended to use VS Code on Windows.
