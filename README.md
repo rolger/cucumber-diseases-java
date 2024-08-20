@@ -3,7 +3,7 @@
 Java implementation of the Cucumber Diseases workshop
 
 ## Installation
-For the workshop Java 17 or later is a pre-requisite for building und runnnig the Cucumber features. It needs to be installed before the installation can begin.
+For the workshop Java 17 or later is a pre-requisite for building und runnnig the Cucumber features. It needs to be installed before the local setup.
 
 ### Local
 
@@ -20,7 +20,7 @@ The VC Code Cucumber extension fails on any Unix distribution. It's recommended 
 Restrictions of missing Cucumber extension on Unix:
 * You won't have Gherkin support
 * You can't generate step definition
-* There is NO linkage between your feature files and step definintion implementation
+* There is NO linkage between your feature files and step definition implementation
 * You are still able to edit all file and execute your Unit Tests.
 
 ### gitpod.io
@@ -30,16 +30,14 @@ Since gitpod.io uses Linux, the same restrictions as on any other Unix distribut
 <img src="https://gitpod.io/button/open-in-gitpod.svg" alt="Open in Gitpod">
 </a>
 
-
 1. [Login to GitHub](https://github.com/login) or [create an account](https://github.com/join).
 
-2. [Create a new workspace at Gitpod](https://gitpod.io/new/#https://github.com/Nagarro-Technical-Coaching-Workshops/cucumber-diseases).
+2. [Create a new workspace at Gitpod](https://gitpod.io/new/#https://github.com/rolger/cucumber-diseases-java).
    This usually takes a little while, just be patient.
 
-3. Open  from the file tree on the left and wait for the Java installation to finish.
+3. At the bottom there is a Terminal window executing the Maven build the of project. Wait until _BUILD SUCCESS_ apprears in the log.
+  
+5. Open  from the file tree on the left and wait for the Java installation to finish.
 
-   At the bottom there is a Terminal window executing the Maven build the of project. Wait until _BUILD SUCCESS_ apprears in the log.
-
-4. After the installation is done, you can open files via the Java Project explorer, edit the code, and select _Run Tests_ on either the test folder or the _RunAllCucumberTests_ class file.
-
+6. After the installation is done, you can open files via the Java Project explorer, edit the code, and select _Run Tests_ on either the test folder or the _RunAllCucumberTests_ class file.
 
