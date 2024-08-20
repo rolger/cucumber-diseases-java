@@ -6,6 +6,7 @@ tasks:
 
 vscode:
   extensions:
+    - redhat.java
     - CucumberOpen.cucumber-official
 
 jetbrains:
