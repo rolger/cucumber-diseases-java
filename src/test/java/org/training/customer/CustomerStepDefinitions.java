@@ -79,6 +79,7 @@ public class CustomerStepDefinitions {
 
     @Then("the customer creation should be successful")
     public void theCustomerCreationShouldBeSuccessful() {
+        Assertions.assertThat(error).isNull();
     }
 
     @Then("the customer creation should fail")
