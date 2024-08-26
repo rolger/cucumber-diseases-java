@@ -124,6 +124,11 @@ public class CustomerStepDefinitions {
 
     @When("the customer Sabine Mustermann is searched")
     public void theCustomerSabineMustermannIsSearched() {
+        count = customerService.searchCustomers("Sabine", "Mustermann").size();
+    }
+
+    @When("the customer Rose Smith is searched")
+    public void theCustomerRoseSmithIsSearched() {
     }
 
     @Then("the customer can be found")
