@@ -1,4 +1,4 @@
-package org.training;
+package org.training.customer;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -6,9 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.assertj.core.api.Assertions;
-
 import io.cucumber.datatable.DataTable;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

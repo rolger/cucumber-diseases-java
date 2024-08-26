@@ -1,4 +1,4 @@
-package org.training;
+package org.training.customer;
 
 import java.time.LocalDate;
 
