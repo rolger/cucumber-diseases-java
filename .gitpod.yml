@@ -6,8 +6,9 @@ tasks:
 
 vscode:
   extensions:
-    - redhat.java
-    - CucumberOpen.cucumber-official
+    - vscjava.vscode-java-pack
+    - nguyenngoclong.gherkin-editor
+#    - cucumberopen.cucumber-official
 
 jetbrains:
     intellij:
