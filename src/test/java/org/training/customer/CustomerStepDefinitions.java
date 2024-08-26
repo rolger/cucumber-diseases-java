@@ -26,16 +26,6 @@ public class CustomerStepDefinitions {
         this.customerService = customerService;
     }
 
-    @Given("the customer first name is {string}")
-    public void theCustomerFirstNameIs(String firstName) {
-        this.firstName = firstName;
-    }
-
-    @Given("the customer last name is {string}")
-    public void theCustomerLastNameIs(String lastName) {
-        this.lastName = lastName;
-    }
-
     @Given("the customer name is {} {}")
     public void theCustomerNameIs(String firstName, String lastName) {
         this.firstName = firstName;
