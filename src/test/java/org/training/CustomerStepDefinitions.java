@@ -35,12 +35,12 @@ public class CustomerStepDefinitions {
         this.firstName = firstName;
     }
 
-    @And("the customer last name is {string}")
+    @Given("the customer last name is {string}")
     public void theCustomerLastNameIs(String lastName) {
         this.lastName = lastName;
     }
 
-    @And("the customer's birthday is {}")
+    @Given("the customer's birthday is {}")
     public void theCustomersBirthdayIs(String date) {
         this.birthday = LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyy/MM/dd"));
     }
@@ -59,7 +59,11 @@ public class CustomerStepDefinitions {
 
     @When("the customer is created")
     public void theCustomerIsCreated() {
-        customerService.addCustomer(firstName, lastName, DEFAULT_BIRTHDAY);
+        try {
+            customerService.addCustomer(firstName, lastName, DEFAULT_BIRTHDAY);
+        } catch (IllegalArgumentException e) {
+            error = e;
+        }
     }
 
     @When("an invalid customer is created")
