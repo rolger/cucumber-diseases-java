@@ -41,16 +41,8 @@ public class CustomerStepDefinitions {
     }
 
     @When("the customer is created")
-    public void theCustomerIsCreated() {
-        try {
-            customerService.addCustomer(firstName, lastName, DEFAULT_BIRTHDAY);
-        } catch (IllegalArgumentException e) {
-            error = e;
-        }
-    }
-
     @When("an invalid customer is created")
-    public void anInvalidCustomerIsCreated() {
+    public void aCustomerIsCreated() {
         try {
             customerService.addCustomer(firstName, lastName, DEFAULT_BIRTHDAY);
         } catch (IllegalArgumentException e) {
