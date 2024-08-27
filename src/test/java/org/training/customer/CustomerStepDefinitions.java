@@ -76,10 +76,6 @@ public class CustomerStepDefinitions {
     public void thereAreNoCustomers() {
     }
 
-    @Given("no customers exist")
-    public void noCustomersExist() {
-    }
-
     @Given("there is a customer")
     @Given("there are some customers")
     public void thereAreSomeCustomers(DataTable customerTable) {
@@ -100,22 +96,11 @@ public class CustomerStepDefinitions {
         count = customerService.searchCustomers("Sabine", "Mustermann").size();
     }
 
-    @When("the customer Rose Smith is searched")
-    public void theCustomerRoseSmithIsSearched() {
-    }
-
     @Then("the customer can be found")
     public void theCustomerCanBeFound() {
         var customer = customerService.searchCustomer(firstName, lastName);
 
         Assertions.assertThat(customer).isNotNull();
-    }
-
-    @Then("the customer can not be found")
-    public void theCustomerCanNotBeFound() {
-        var customer = customerService.searchCustomer(firstName, lastName);
-
-        Assertions.assertThat(customer).isNull();
     }
 
     @Then("the customer Sabine Mustermann can be found")
