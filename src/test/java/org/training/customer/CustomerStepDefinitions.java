@@ -15,10 +15,6 @@ public class CustomerStepDefinitions {
     private static final LocalDate DEFAULT_BIRTHDAY = LocalDate.of(1995, 1, 1);
 
     private final CustomerService customerService;
-    private String firstName;
-    private String lastName;
-    private String secondLastName;
-    private String secondFirstName;
     private Exception error;
     private int count;
 
@@ -26,32 +22,12 @@ public class CustomerStepDefinitions {
         this.customerService = customerService;
     }
 
-    @Given("the customer name is {} {}")
-    public void theCustomerNameIs(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
-
-    @Given("the second customer is {} {}")
-    public void theSecondCustomerIs(String firstName, String lastName) {
-        this.secondFirstName = firstName;
-        this.secondLastName = lastName;
-    }
-
-    @When("the customer is created")
-    @When("an invalid customer is created")
-    public void aCustomerIsCreated() {
+    @When("the customer {} {} is created")
+    @When("the second customer {} {} is created")
+    @When("an invalid customer {} {} is created")
+    public void aCustomerIsCreated(String firstName, String lastName) {
         try {
             customerService.addCustomer(firstName, lastName, DEFAULT_BIRTHDAY);
-        } catch (IllegalArgumentException e) {
-            error = e;
-        }
-    }
-
-    @When("the second customer is created")
-    public void theSecondCustomerIsCreated() {
-        try {
-            customerService.addCustomer(secondFirstName, secondLastName, DEFAULT_BIRTHDAY);
         } catch (IllegalArgumentException e) {
             error = e;
         }
