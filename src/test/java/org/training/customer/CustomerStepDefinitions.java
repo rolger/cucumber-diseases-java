@@ -1,14 +1,16 @@
 package org.training.customer;
 
-import java.time.LocalDate;
-import java.util.List;
-import java.util.Map;
-
-import org.assertj.core.api.Assertions;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.assertj.core.api.Assertions;
+
+import java.time.LocalDate;
+import java.util.List;
+import java.util.Map;
+
+import static org.assertj.core.api.Assertions.catchThrowable;
 
 public class CustomerStepDefinitions {
 
@@ -73,6 +75,9 @@ public class CustomerStepDefinitions {
 
     @Then("the second customer creation should fail")
     public void theSecondCustomerCreationShouldFail() {
+        Throwable error = catchThrowable(()->customerService.addCustomer(secondFirstName, secondLastName, DEFAULT_BIRTHDAY));
+
+        Assertions.assertThat(error).isNotNull().hasMessage("Customer already exists");
     }
 
     @Given("there are no customers")
