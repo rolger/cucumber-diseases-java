@@ -10,8 +10,6 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
 
-import static org.assertj.core.api.Assertions.catchThrowable;
-
 public class CustomerStepDefinitions {
 
     private static final LocalDate DEFAULT_BIRTHDAY = LocalDate.of(1995, 1, 1);
@@ -52,6 +50,11 @@ public class CustomerStepDefinitions {
 
     @When("the second customer is created")
     public void theSecondCustomerIsCreated() {
+        try {
+            customerService.addCustomer(secondFirstName, secondLastName, DEFAULT_BIRTHDAY);
+        } catch (IllegalArgumentException e) {
+            error = e;
+        }
     }
 
     @Then("the customer creation should be successful")
@@ -61,15 +64,16 @@ public class CustomerStepDefinitions {
 
     @Then("the customer creation should fail")
     public void theCustomerCreationShouldFail() {
-        Assertions.assertThat(error).isNotNull();
-        Assertions.assertThat(error).hasMessage("Mandatory name parameter is missing");
+        Assertions.assertThat(error)
+                .isNotNull()
+                .hasMessage("Mandatory name parameter is missing");
     }
 
     @Then("the second customer creation should fail")
     public void theSecondCustomerCreationShouldFail() {
-        Throwable error = catchThrowable(()->customerService.addCustomer(secondFirstName, secondLastName, DEFAULT_BIRTHDAY));
-
-        Assertions.assertThat(error).isNotNull().hasMessage("Customer already exists");
+        Assertions.assertThat(error)
+                .isNotNull()
+                .hasMessage("Customer already exists");
     }
 
     @Given("there are no customers")
@@ -102,15 +106,6 @@ public class CustomerStepDefinitions {
 
         Assertions.assertThat(customer.firstName).isEqualTo(firstName);
         Assertions.assertThat(customer.lastName).isEqualTo(lastName);
-    }
-
-    @Then("the second customer can be found")
-    public void theSecondCustomerCanBeFound() {
-        customerService.addCustomer(secondFirstName, secondLastName, DEFAULT_BIRTHDAY);
-
-        var customer = customerService.searchCustomers(secondFirstName, secondLastName);
-
-        Assertions.assertThat(customer).isNotNull();
     }
 
     @Then("the number of customers found is {int}")
