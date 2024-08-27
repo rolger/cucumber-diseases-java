@@ -96,24 +96,18 @@ public class CustomerStepDefinitions {
         count = customerService.searchCustomers("Sabine", "Mustermann").size();
     }
 
-    @Then("the customer can be found")
-    public void theCustomerCanBeFound() {
+    @Then("the customer {} {} can be found")
+    public void theCustomerCanBeFound(String firstName, String lastName) {
         var customer = customerService.searchCustomer(firstName, lastName);
 
-        Assertions.assertThat(customer).isNotNull();
-    }
-
-    @Then("the customer Sabine Mustermann can be found")
-    public void theCustomerSabineMustermannCanBeFound() {
-        var customer = customerService.searchCustomer("Sabine", "Mustermann");
-
-        Assertions.assertThat(customer.firstName).isEqualTo("Sabine");
-        Assertions.assertThat(customer.lastName).isEqualTo("Mustermann");
+        Assertions.assertThat(customer.firstName).isEqualTo(firstName);
+        Assertions.assertThat(customer.lastName).isEqualTo(lastName);
     }
 
     @Then("the second customer can be found")
     public void theSecondCustomerCanBeFound() {
         customerService.addCustomer(secondFirstName, secondLastName, DEFAULT_BIRTHDAY);
+
         var customer = customerService.searchCustomers(secondFirstName, secondLastName);
 
         Assertions.assertThat(customer).isNotNull();
