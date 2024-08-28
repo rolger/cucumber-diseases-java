@@ -12,7 +12,7 @@ Are you using multiple “When” steps are to store multiple results? This lead
 
 ## Your task
 
-TODO
+TODO: describe details of exercise
 
 * **Merge Steps**: In the case of multiple "When" steps the most obvious solutin could be merging the implementation into something new. Consider also merging or replacing multiple "When" steps with a  "Then" step. This happens if you storing multiple results or there is something suspicious in your assertion.
 * **Rearrange Steps**: This is similar to merging steps. Ask your self, which steps are describing the action and which of them are preparing or asserting the scenarios.
