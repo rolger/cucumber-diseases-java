@@ -1,6 +1,8 @@
-# Diagnosis and Treatment of Cucumber Diseases
+# Diagnosis and Treatment of Cucumber Diseases in Java with Cucumber
 
-Java implementation of the Cucumber Diseases workshop
+Can you spot the Cucumber Diseases in this code? We’ll explore the code smells lurking in Gherkin and Cucumber. 🧪👃 These subtle yet impactful issues can creep into our test scenarios, affecting readability, maintainability, and overall quality.
+
+Refactor this code, take small steps, run the tests often. See how small and beautiful can make it.
 
 ## Installation
 For the workshop Java 17 or later is a pre-requisite for building und runnnig the Cucumber features. It needs to be installed before the local setup.
@@ -40,4 +42,8 @@ Since gitpod.io uses Linux, the same restrictions as on any other Unix distribut
 5. Open  from the file tree on the left and wait for the Java installation to finish.
 
 6. After the installation is done, you can open files via the Java Project explorer, edit the code, and select _Run Tests_ on either the test folder or the _RunAllCucumberTests_ class file.
+
+## Refactoring Exercises
+
+The code contains multiple Cucumber smells. It's recommended to follow the suggested order. Each smell and exercise is described in a seperate assingment.
 
